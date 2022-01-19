@@ -1,5 +1,5 @@
 [package]
-name = "c2f2c"
+name = "cf_convert"
 version = "0.1.0"
 edition = "2021"
 
