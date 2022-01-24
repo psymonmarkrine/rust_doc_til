@@ -1,15 +1,19 @@
 fn main() {
     let mut s = String::from("THE QUICK BROWN FOX");
     let word = first_word(&s);
+    
+    let t = "JUMPS OVER THE LAZY DOG";
 
     println!("{}, {}", s, word);
 
-    // s.clear();
+    let word = first_word(&t);
 
-    // println!("{}, {}", s, word);
+    s.clear();
+
+    println!("{}, {}", s, word);
 }
 
-fn first_word(s: &String) -> &str {
+fn first_word(s: &str) -> &str {
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {
