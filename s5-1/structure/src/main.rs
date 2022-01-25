@@ -18,6 +18,12 @@ fn main() {
     let user2 = build_user(String::from("going@how.it.is"), String::from("psycojitwheet"));
 
     println!("{}", user2.email);
+
+    let user3 = User {
+        sign_in_count: 10,
+        ..user2
+    };
+    println!("{}", user3.username)
 }
 
 fn build_user(email: String, username: String) -> User {
