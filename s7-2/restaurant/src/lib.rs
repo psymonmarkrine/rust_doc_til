@@ -11,10 +11,10 @@ mod front_of_house {
     }
 }
 
-use self::front_of_house::hosting;
+use self::front_of_house::hosting as hst;
 
 pub fn eat_at_restaurant() {
-    hosting::add_to_waitlist();
+    hst::add_to_waitlist();
 }
 
 fn serve_order() {}
