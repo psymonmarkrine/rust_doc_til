@@ -4,14 +4,14 @@ mod front_of_house {
         fn seat_at_table() {}
     }
 
-    mod serving {
+    pub mod serving {
         fn take_order() {}
         fn serve_order() {}
         fn take_payment() {}
     }
 }
 
-pub use self::front_of_house::hosting as hst;
+pub use self::front_of_house::{hosting as hst, serving};
 
 pub fn eat_at_restaurant() {
     hst::add_to_waitlist();
