@@ -11,7 +11,7 @@ mod front_of_house {
     }
 }
 
-use self::front_of_house::hosting as hst;
+pub use self::front_of_house::hosting as hst;
 
 pub fn eat_at_restaurant() {
     hst::add_to_waitlist();
