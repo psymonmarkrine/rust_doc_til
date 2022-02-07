@@ -5,16 +5,18 @@ mod front_of_house {
     }
 
     pub mod serving {
-        fn take_order() {}
+        pub fn take_order() {}
         fn serve_order() {}
         fn take_payment() {}
     }
 }
 
-pub use self::front_of_house::{hosting as hst, serving};
+pub use self::front_of_house::{hosting as hst, serving::*};
 
 pub fn eat_at_restaurant() {
     hst::add_to_waitlist();
+    take_order();
+    // take_payment();
 }
 
 fn serve_order() {}
