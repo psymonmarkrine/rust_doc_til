@@ -6,5 +6,8 @@ fn main() {
     v.push(7);
     v.push(8);
 
-    println!("{:#?}", v);
+    // let third: &i32 = &v[100];
+    let third: Option<&i32> = v.get(100);
+
+    println!("{:#?}", third);
 }
