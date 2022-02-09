@@ -14,7 +14,9 @@ fn main() {
     // let _does_not_exist = &v[100];
     let _does_not_exist = v.get(100);
 
-    v.push(9);
-
-    println!("{:#?}", third);
+    // v.push(9);
+    
+    for i in &v{
+        println!("{:#?}", i);
+    }
 }
