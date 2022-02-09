@@ -7,7 +7,7 @@ fn main() {
     // v.push(8);
 
     // let third: &i32 = &v[2];
-    let third: Option<&i32> = v.get(2);
+    // let third: Option<&i32> = v.get(2);
 
     // println!("{:#?}", third);
 
@@ -15,8 +15,9 @@ fn main() {
     let _does_not_exist = v.get(100);
 
     // v.push(9);
-    
-    for i in &v{
+
+    for i in &mut v{
+        *i += 10;
         println!("{:#?}", i);
     }
 }
