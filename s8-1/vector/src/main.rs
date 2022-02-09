@@ -12,12 +12,27 @@ fn main() {
     // println!("{:#?}", third);
 
     // let _does_not_exist = &v[100];
-    let _does_not_exist = v.get(100);
+    // let _does_not_exist = v.get(100);
 
     // v.push(9);
 
-    for i in &mut v{
-        *i += 10;
-        println!("{:#?}", i);
+    // for i in &mut v{
+    //     *i += 10;
+    //     println!("{:#?}", i);
+    // }
+
+    #[derive(Debug)]
+    enum SpreadsheetCell {
+        Int(i32),
+        Float(f64),
+        Text(String),
     }
+    
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+    ];
+
+    println!("{:#?}", row);
 }
