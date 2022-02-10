@@ -1,8 +1,8 @@
 fn main() {
-    let mut s = String::from("foo");
+    let s1 = String::from("foo");
     let s2 = "bar";
-    s.push_str(s2);
-    s.push('!');
-    
-    println!("{}", s);
+    let s3 = s1 + s2;
+
+    println!("{}", s2);
+    println!("{}", s3);
 }
