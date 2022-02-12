@@ -8,4 +8,12 @@ fn main() {
     println!("{}", s2);
     println!("{}", s3);
     println!("{}", s);
+
+    for c in "こnにちは".chars() {
+        println!("{}", c);
+    }
+
+    for b in "こnにちは".bytes() {
+        println!("{}", b);
+    }
 }
