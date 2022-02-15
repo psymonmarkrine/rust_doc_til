@@ -6,8 +6,8 @@ fn main() {
 
     let f = match f {
         Ok(file) => file,
-        Err(ref err) if err.kind() == ErrorKind::NotFound => {
-            match File::create("hello.txt") {
+        Err(error) => match error.kind() {
+            ErrorKind::NotFound => match File::create("hello.txt") {
                 Ok(fc) => fc,
                 Err(e) => {
                     panic!(
@@ -15,13 +15,13 @@ fn main() {
                         e
                     )
                 },
-            }
-        },
-        Err(error) => {
-            panic!(
-                "There was a problem opening the file: {:?}", 
-                error
-            )
-        },
+            },
+            other_error => {
+                panic!(
+                    "There was a problem opening the file: {:?}", 
+                    other_error
+                )
+            },
+        }
     };
 }
