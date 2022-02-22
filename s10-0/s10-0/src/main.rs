@@ -1,7 +1,7 @@
 fn largest(list: &[i32]) -> i32 {
     let mut largest = list[0];
 
-    for number in list.iter() {
+    for &number in list.iter() {
         if number > largest {
             largest = number;
         }
