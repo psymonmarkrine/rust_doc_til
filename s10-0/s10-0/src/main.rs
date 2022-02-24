@@ -1,4 +1,16 @@
-fn largest(list: &[i32]) -> i32 {
+fn largest_i32(list: &[i32]) -> i32 {
+    let mut largest = list[0];
+
+    for &number in list.iter() {
+        if number > largest {
+            largest = number;
+        }
+    }
+
+    largest
+}
+
+fn largest_char(list: &[char]) -> char {
     let mut largest = list[0];
 
     for &number in list.iter() {
