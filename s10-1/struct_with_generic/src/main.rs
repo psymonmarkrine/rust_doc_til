@@ -12,6 +12,13 @@ impl<T, U> Point<T, U> {
     fn y(&self) -> &U {
         &self.y
     }
+
+    fn mixup<V, W>(self, other: Point<V, W>) -> Point<T, W> {
+        Point {
+            x: self.x,
+            y: other.y,
+        }
+    }
 }
 
 fn main() {
@@ -22,4 +29,7 @@ fn main() {
     println!("integer.x = {}", integer.x());
     println!("float.x = {}", float.x());
     println!("int_and_float.x = {}", int_and_float.x());
+
+    let mix = integer.mixup(float);
+    println!("mix.x = {}, mix.y = {}", mix.x, mix.y);
 }
