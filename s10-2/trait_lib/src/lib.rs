@@ -43,3 +43,21 @@ impl Summary for Tweet {
 pub fn notify(item: &impl Summary) {
     println!("Breaking news! {}", item.summarize());
 }
+
+/*
+
+// notify(Tweet{...}, NewsArticle{...})
+// notify(NewsArticle{...}, Tweet{...})
+// notify(Tweet{...}, Tweet{...})
+// notify(NewsArticle{...}, NewsArticle{...})
+pub fn notify<T: Summary>(item1: &T, item2: &T) {
+    println!("Breaking news! {}", item1.summarize());
+}
+
+// notify(Tweet{...}, Tweet{...})
+// notify(NewsArticle{...}, NewsArticle{...})
+pub fn notify(item1: &impl Summary, item2: &impl Summary) {
+    println!("Breaking news! {}", item2.summarize());
+}
+
+// */
