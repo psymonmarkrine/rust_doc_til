@@ -60,4 +60,12 @@ pub fn notify(item1: &impl Summary, item2: &impl Summary) {
     println!("Breaking news! {}", item2.summarize());
 }
 
+pub fn notify(item: &(impl Summary + Display)) {
+    println!("item Display: {}, item.summarize(): {}", item, item.summarize());
+}
+
+pub fn notify<T: Summary + Display>(item: &T) {
+    println!("item Display: {}, item.summarize(): {}", item, item.summarize());
+}
+
 // */
