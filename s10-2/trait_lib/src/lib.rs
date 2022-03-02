@@ -68,4 +68,9 @@ pub fn notify<T: Summary + Display>(item: &T) {
     println!("item Display: {}, item.summarize(): {}", item, item.summarize());
 }
 
+fn some_function<T, U>(t: &T, u: &U) -> i32
+    where T: Display + Clone,
+          U: Clone + Debug
+{}
+
 // */
