@@ -11,11 +11,6 @@ mod tests {
     use super::*;
 
     #[test]
-    fn it_adds_two() {
-        assert_eq!(4, add_two(2));
-    }
-
-    #[test]
     fn internal() {
         assert_eq!(4, internal_adder(2, 2));
     }
