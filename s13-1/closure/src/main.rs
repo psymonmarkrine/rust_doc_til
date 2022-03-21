@@ -33,7 +33,7 @@ impl<T> Cacher<T>
             Some(v) => v,
             None => {
                 let v = (self.calculation)(arg);
-                self.value = Some(v)l;
+                self.value = Some(v);
                 v
             },
         }
@@ -41,22 +41,22 @@ impl<T> Cacher<T>
 }
 
 fn generate_workout(intensity: u32, random_number: u32) {
-    let expensive_closure = |num| {
+    let mut expensive_result = Cacher::new(|num| {
         println!("calculating slowly...");
         thread::sleep(Duration::from_secs(2));
         num
-    };
+    });
 
     if intensity < 25 {
 
         println!(
             "Today, do {} pushups!",
-            expensive_closure(intensity)
+            expensive_result.value(intensity)
         );
 
         println!(
             "Next, do {} situps!",
-            expensive_closure(intensity)
+            expensive_result.value(intensity)
         );
     } else {
         if random_number == 3 {
@@ -64,7 +64,7 @@ fn generate_workout(intensity: u32, random_number: u32) {
         } else {
             println!(
                 "Today, run for {} minutes!",
-                expensive_closure(intensity)
+                expensive_result.value(intensity)
             );
         }
     }
