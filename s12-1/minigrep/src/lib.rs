@@ -34,7 +34,7 @@ impl Config {
 
         let query = match args.next() {
             Some(arg) => arg,
-            None => return Error("Didn't get a query string")
+            None => return Err("Didn't get a query string")
         };
 
         let filename = match args.next() {
