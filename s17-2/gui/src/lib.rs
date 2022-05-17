@@ -39,7 +39,7 @@ mod tests {
         }
     }
 
-    struct Objct2{}
+    enum Objct2{TEST,}
     impl Draw for Objct2 {
         fn draw(&self) {
             println!("This is Objct2!")
@@ -51,7 +51,7 @@ mod tests {
         let screen = Screen {
             components: vec![
                 Box::new(Objct1{}), 
-                Box::new(Objct2{})
+                Box::new(Objct2::TEST),
                 ]
         };
         screen.run();
